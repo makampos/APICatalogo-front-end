@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Routes, RouterModule, Router } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { CategoriaDetalheComponent } from './categoria-detalhe/categoria-detalhe.component';
 import { CategoriaNovaComponent } from './categoria-nova/categoria-nova.component';
@@ -47,17 +45,11 @@ const routes: Routes = [
     redirectTo: '/categorias',
     pathMatch: 'full'
   } ,
-]
+];
 
-@NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(routes)
-  ],
-  exports: [
-    RouterModule
-  ]
- 
+@NgModule ({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
+ 
 export class AppRoutingModule { }
