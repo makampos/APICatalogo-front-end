@@ -1,3 +1,23 @@
-<p>
-  categoria-detalhe works!
-</p>
+<div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade" *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="button-row">
+    <button mat-flat-button color="accent" [routerLink]="['/categorias']"><mat-icon>List<mat-icon></button> 
+  </div>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title><h2>{{cateogoria.nome}}</h2></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <dl>
+        <dt>Imagem :</dt>
+        <dd>{{cateogoria.imagemUrl}}</dd>
+      </dl>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button color="primary" class="teste" [routerLink]="['/categoria-editar']"></button>
+      <button mat-flat-button color="warn" (click)="deleteCategoria(categoria.categoriaId)"></button>
+    </mat-card-actions>
+  </mat-card>
+</div>
